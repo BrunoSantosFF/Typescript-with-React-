@@ -1,0 +1,1 @@
+1 - First step was to learn how to use components with typescript
