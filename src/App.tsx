@@ -1,6 +1,7 @@
 import {useState, useMemo} from "react"
 import './App.css';
 import Button from './components/Button';
+import TextField from "./components/TextField";
 
 interface Task {
   id: string
@@ -28,6 +29,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Button theme='light' onClick={() => {console.log('esportando')}} option={{variant:"normal"}}>Eu</Button>
+
+        <TextField onChange={(e) => e.target.value}/>
       </header>
     </div>
   );
