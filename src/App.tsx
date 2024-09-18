@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {useState, useMemo} from "react"
 import './App.css';
 import Button from './components/Button';
 
@@ -12,11 +12,17 @@ function App() {
   const [task, setTasks] = useState<Task[]>()
   const [count, setCount] = useState<number>(1)
 
-  setTasks([{
-    id: 'bruno',
-    isCompleted: false,
-  }
-  ])
+  // setTasks([{
+  //   id: 'bruno',
+  //   isCompleted: false,
+  // }
+  // ])
+
+  //useMemo
+  const completedTasks = useMemo(() => {
+    return task?.filter(task => task.isCompleted)
+  }, [task])
+
 
   return (
     <div className="App">
